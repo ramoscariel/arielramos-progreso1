@@ -1,0 +1,53 @@
+﻿@model arielramos_progreso1.Models.ArielRamos_Tabla
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ArielRamos_Tabla</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ArPesoKilogramos" class="control-label"></label>
+                <input asp-for="ArPesoKilogramos" class="form-control" />
+                <span asp-validation-for="ArPesoKilogramos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArAlturaM" class="control-label"></label>
+                <input asp-for="ArAlturaM" class="form-control" />
+                <span asp-validation-for="ArAlturaM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArNombre" class="control-label"></label>
+                <input asp-for="ArNombre" class="form-control" />
+                <span asp-validation-for="ArNombre" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ArEmpleado" /> @Html.DisplayNameFor(model => model.ArEmpleado)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArFechaIngreso" class="control-label"></label>
+                <input asp-for="ArFechaIngreso" class="form-control" />
+                <span asp-validation-for="ArFechaIngreso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
